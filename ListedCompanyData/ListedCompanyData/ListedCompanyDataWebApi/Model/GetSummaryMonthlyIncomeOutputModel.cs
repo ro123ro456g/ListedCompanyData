@@ -1,6 +1,6 @@
 ﻿namespace ListedCompanyDataWebApi.Model
 {
-    public class GetSummaryMonthlyIncomeModel
+    public class GetSummaryMonthlyIncomeOutputModel
     {
         public string CompanyId { get; set; }
 
