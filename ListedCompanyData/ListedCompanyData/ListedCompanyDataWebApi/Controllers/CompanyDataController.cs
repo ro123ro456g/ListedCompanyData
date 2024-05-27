@@ -8,10 +8,10 @@ namespace ListedCompanyDataWebApi.Controllers
     [Route("[controller]")]
     public class CompanyDataController : ControllerBase
     {
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<CompanyDataController> _logger;
         //private
 
-        public CompanyDataController(ILogger<WeatherForecastController> logger)
+        public CompanyDataController(ILogger<CompanyDataController> logger)
         {
             _logger = logger;
         }
