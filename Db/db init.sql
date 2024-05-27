@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [ListedCompanyData]    Script Date: 2024/5/27 下午 08:52:52 ******/
+/****** Object:  Database [ListedCompanyData]    Script Date: 2024/5/27 下午 09:50:12 ******/
 CREATE DATABASE [ListedCompanyData]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -80,7 +80,7 @@ ALTER DATABASE [ListedCompanyData] SET QUERY_STORE = OFF
 GO
 USE [ListedCompanyData]
 GO
-/****** Object:  Table [dbo].[CompanyBasic]    Script Date: 2024/5/27 下午 08:52:52 ******/
+/****** Object:  Table [dbo].[CompanyBasic]    Script Date: 2024/5/27 下午 09:50:12 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -96,7 +96,7 @@ CREATE TABLE [dbo].[CompanyBasic](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CompanyIndustryCategory]    Script Date: 2024/5/27 下午 08:52:52 ******/
+/****** Object:  Table [dbo].[CompanyIndustryCategory]    Script Date: 2024/5/27 下午 09:50:12 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -110,7 +110,7 @@ CREATE TABLE [dbo].[CompanyIndustryCategory](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[SummaryMonthlyIncome]    Script Date: 2024/5/27 下午 08:52:52 ******/
+/****** Object:  Table [dbo].[SummaryMonthlyIncome]    Script Date: 2024/5/27 下午 09:50:12 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -206,7 +206,7 @@ INSERT [dbo].[CompanyIndustryCategory] ([IndustryCategoryId], [Name]) VALUES (34
 GO
 SET IDENTITY_INSERT [dbo].[CompanyIndustryCategory] OFF
 GO
-/****** Object:  StoredProcedure [dbo].[GetSummaryMonthlyIncome]    Script Date: 2024/5/27 下午 08:52:52 ******/
+/****** Object:  StoredProcedure [dbo].[GetSummaryMonthlyIncome]    Script Date: 2024/5/27 下午 09:50:12 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -227,7 +227,7 @@ BEGIN
 	WHERE smi.DataDatetime = @DataDatetime
 END
 GO
-/****** Object:  StoredProcedure [dbo].[InsertCompanyBasic]    Script Date: 2024/5/27 下午 08:52:52 ******/
+/****** Object:  StoredProcedure [dbo].[InsertCompanyBasic]    Script Date: 2024/5/27 下午 09:50:12 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -277,7 +277,7 @@ BEGIN
 		RETURN 0;
 END
 GO
-/****** Object:  StoredProcedure [dbo].[InsertSummaryMonthlyIncome]    Script Date: 2024/5/27 下午 08:52:52 ******/
+/****** Object:  StoredProcedure [dbo].[InsertSummaryMonthlyIncome]    Script Date: 2024/5/27 下午 09:50:12 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -335,10 +335,10 @@ BEGIN
 			@CumulativeOperatingIncomeComparative,
 			@Note
 		);
-		RETURN 1;
+		SELECT 1;
 	END
 	ELSE
-		RETURN 0;
+		SELECT 0;
 END
 GO
 USE [master]
